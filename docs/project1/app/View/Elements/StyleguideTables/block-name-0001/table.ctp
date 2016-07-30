@@ -1,5 +1,6 @@
 <?php
-  echo $this->SgTable0001->createSection(array('is_deprecated'=>TRUE, 'heading_text'=>$dir_name));
+  //廃止予定のblockは以下の行を 'is_deprecated'=>TRUE で設定してください
+  echo $this->SgTable0001->createSection(array('is_deprecated'=>FALSE, 'heading_text'=>$dir_name));
 ?>
 
 ここにblockの説明文を書いてください。
