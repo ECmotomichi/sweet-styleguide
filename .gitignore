@@ -23,3 +23,10 @@
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
+
+# Others
+.DS_Store
+.sass-cache
+node_modules
+.vagrant
+Vagrantfile
