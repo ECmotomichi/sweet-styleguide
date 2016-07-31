@@ -47,7 +47,8 @@ class SgTable0001Helper extends AppHelper {
   public function createTable() {
     $html_arr = array(
       '</div>',
-      '<ul class="sg-table-0001__table">',
+        '<div class="sg-table-0001__table-wrap">',
+          '<ul class="sg-table-0001__table">',
     );
     $html_str = implode('', $html_arr);
     return $html_str;
@@ -107,7 +108,8 @@ class SgTable0001Helper extends AppHelper {
 
   public function endSection() {
     $html_arr = array(
-          '</ul>',
+            '</ul>',
+          '</div>',
           '<div class="sg-table-0001__translucent-layer">',
             '&nbsp;',
           '</div>',
