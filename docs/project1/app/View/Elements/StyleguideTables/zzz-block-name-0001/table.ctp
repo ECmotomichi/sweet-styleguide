@@ -1,6 +1,6 @@
 <?php
-//---廃止予定のモジュールはTRUEを設定してください。
-$is_deprecated = TRUE;
+//---TRUEまたはFALSEを設定してください。廃止予定のモジュールはTRUEを設定してください。
+$is_deprecated = FALSE;
 
 
 

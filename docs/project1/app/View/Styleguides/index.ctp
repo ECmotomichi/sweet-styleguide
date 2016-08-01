@@ -1,6 +1,127 @@
 <?php
+//styleguide.cssを読み込み
+echo $this->Html->css('styleguide');
+
+//styleguide.jsを読み込み
 echo $this->Html->script('styleguide');
 ?>
+
+
+
+<?php
+// カラーテーブルの設定を書くところ(ここから)
+$obj['color_list'] = array(
+
+
+
+
+
+  //1テーブル分の表示データ(ここから)
+  array(
+    'heading' => '色テーブル1のタイトル',
+    'color' => array(
+
+      //1行分の表示データ(ここから)
+      array(
+        'var_name' => 'sassなどで使用している変数名1',
+        'color_code' => '#ffdddd',
+        'desc' => '色についての説明文1',
+      ),
+      //1行分の表示データ(ここまで)
+
+      //1行分の表示データ(ここから)
+      array(
+        'var_name' => 'sassなどで使用している変数名2',
+        'color_code' => '#ddddff',
+        'desc' => '色についての説明文2',
+      ),
+      //1行分の表示データ(ここまで)
+
+    )
+  ),
+  //1テーブル分の表示データ(ここまで)
+
+
+
+
+
+  //1テーブル分の表示データ(ここから)
+  array(
+    'heading' => '色テーブル2のタイトル',
+    'color' => array(
+
+      //1行分の表示データ(ここから)
+      array(
+        'var_name' => 'sassなどで使用している変数名1',
+        'color_code' => '#ffdddd',
+        'desc' => '色についての説明文1',
+      ),
+      //1行分の表示データ(ここまで)
+
+      //1行分の表示データ(ここから)
+      array(
+        'var_name' => 'sassなどで使用している変数名2',
+        'color_code' => '#ddffdd',
+        'desc' => '色についての説明文2',
+      ),
+      //1行分の表示データ(ここまで)
+
+    )
+  ),
+  //1テーブル分の表示データ(ここまで)
+
+
+
+
+
+  //1テーブル分の表示データ(ここから)
+  array(
+    'heading' => '色テーブル3のタイトル',
+    'color' => array(
+
+      //1行分の表示データ(ここから)
+      array(
+        'var_name' => 'sassなどで使用している変数名1',
+        'color_code' => '#ffdddd',
+        'desc' => '色についての説明文1',
+      ),
+      //1行分の表示データ(ここまで)
+
+      //1行分の表示データ(ここから)
+      array(
+        'var_name' => 'sassなどで使用している変数名2',
+        'color_code' => '#ddffdd',
+        'desc' => '色についての説明文2',
+      ),
+      //1行分の表示データ(ここまで)
+
+    )
+  ),
+  //1テーブル分の表示データ(ここまで)
+
+
+
+
+
+);
+// カラーテーブルの設定を書くところ(ここまで)
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -19,11 +140,18 @@ echo $this->Html->script('styleguide');
     <div class="sg-header-0001__index-wrap js-sg-header-0001__index-wrap">
       <span class="sg-header-0001__index-heading">index</span>
       <ul class="sg-header-0001__index-ul sg-header-0001__index-ul--is-visible">
+<?php
+foreach ($obj['color_list'] as $value) {
+?>
         <li class="sg-header-0001__index-li">
-          <a class="sg-header-0001__index-anc" href="#color-table">
-            color-table
+          <a class="sg-header-0001__index-anc" href="#<?php echo $value['heading'] ?>">
+            <?php echo $value['heading'] ?>
           </a>
         </li>
+<?php
+}
+?>
+
 <?php
 foreach ($obj['dir_list'] as $key => $dir_name) {
 ?>
@@ -48,12 +176,13 @@ foreach ($obj['dir_list'] as $key => $dir_name) {
 
 
 
-<div class="sg-color-table" id="color-table">
+<?php foreach ($obj['color_list'] as $value) { ?>
+<div class="sg-color-table" id="<?php echo $value['heading'] ?>">
   <div class="sg-color-table__first-wrap">
     <span class="sg-color-table__table-heading-wrap">
       <div class="sg-heading-0001">
         <h2 class="sg-heading-0001__h-elm">
-          color-table
+          <?php echo $value['heading'] ?>
         </h2>
       </div>
     </span>
@@ -72,25 +201,26 @@ foreach ($obj['dir_list'] as $key => $dir_name) {
           説明
         </div>
       </li>
-<?php foreach ($obj['color_list'] as $key => $value) { ?>
+  <?php foreach ($value['color'] as $row) { ?>
       <li class="sg-color-table__tr">
-        <div class="sg-color-table__display-td" style="background-color:<?php echo $value['color_code']; ?>;">
+        <div class="sg-color-table__display-td" style="background-color:<?php echo $row['color_code']; ?>;">
           &nbsp;
         </div>
         <div class="sg-color-table__variable-name-td">
-          <?php echo $value['var_name']; ?>
+          <?php echo $row['var_name']; ?>
         </div>
         <div class="sg-color-table__color-code-td">
-          <?php echo $value['color_code']; ?>
+          <?php echo $row['color_code']; ?>
         </div>
         <div class="sg-color-table__desc-td">
-          <?php echo $value['desc']; ?>
+          <?php echo $row['desc']; ?>
         </div>
       </li>
-<?php } ?>
+  <?php } ?>
     </ul>
   </div>
 </div>
+<?php } ?>
 
 
 

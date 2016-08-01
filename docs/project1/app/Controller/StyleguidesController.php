@@ -9,50 +9,6 @@ class StyleguidesController extends AppController {
   public $helpers = array('SgTable0001');
 
   public function index() {
-
-    function color(){
-      return array(
-
-        // カラーテーブルに表示したい内容をここに記述してください。 (ここから)
-        array(
-          'var_name' => 'sassなどで使用している変数名1',
-          'color_code' => '#ffdddd',
-          'desc' => '色についての説明文1',
-        ),
-
-        array(
-          'var_name' => 'sassなどで使用している変数名2',
-          'color_code' => '#ddffdd',
-          'desc' => '色についての説明文2',
-        ),
-
-        array(
-          'var_name' => 'sassなどで使用している変数名3',
-          'color_code' => '#ddddff',
-          'desc' => '色についての説明文3',
-        ),
-
-        array(
-          'var_name' => 'sassなどで使用している変数名4',
-          'color_code' => '#ffffdd',
-          'desc' => '色についての説明文4',
-        ),
-
-        array(
-          'var_name' => 'sassなどで使用している変数名5',
-          'color_code' => '#ddffff',
-          'desc' => '色についての説明文5',
-        ),
-
-        // (ここまで)
-
-      );
-    }
-
-
-
-
-
     // viewに渡す連想配列を宣言
     $obj_for_view = array(
       'dir_list' => array(),
@@ -80,8 +36,6 @@ class StyleguidesController extends AppController {
       $read_result = $dir_lv_3->read();
       $obj_for_view['tr_list'][$dir_name] = $read_result[1];
     }
-
-    $obj_for_view['color_list'] = color();
 
     $this->set('obj', $obj_for_view);
   }//end of index action
