@@ -88,7 +88,7 @@ class SgTable0001Helper extends AppHelper {
       '</div>',
       '<div class="sg-table-0001__sample-code-cell">',
         '<div class="sg-table-0001__sample-code-cell-inner">',
-          '<textarea class="sg-table-0001__textarea-elm">'
+          '<textarea class="sg-table-0001__textarea-elm" readonly>'
     );
     $html_str = implode('', $html_arr);
     return $html_str;
