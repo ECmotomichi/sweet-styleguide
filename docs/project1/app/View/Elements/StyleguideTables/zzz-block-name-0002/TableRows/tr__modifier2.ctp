@@ -48,6 +48,7 @@ $display_sample = str_replace('//---表示サンプルHTML(ここまで)', '', $
 $display_sample = trim($display_sample);
 $copy_paste_code = str_replace('//---コピペ用コード(ここから)', '', $copy_paste_code);
 $copy_paste_code = str_replace('//---コピペ用コード(ここまで)', '', $copy_paste_code);
+$copy_paste_code = h($copy_paste_code);
 $copy_paste_code = trim($copy_paste_code);
 echo $this->SgTable0001->createTr();
 echo $this->SgTable0001->descCell();
