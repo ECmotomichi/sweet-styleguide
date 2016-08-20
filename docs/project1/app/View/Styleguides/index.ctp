@@ -128,8 +128,8 @@ $obj['color_list'] = array(
 
 <header class="sg-header-0001">
   <div class="sg-header-0001__first-wrap">
-    <h1 class="sg-header-0001__heading">
-      スタイルガイド
+    <h1 class="sg-header-0001__heading-wrap">
+      <a class="sg-header-0001__heading" href="#page-top">スタイルガイド</a>
     </h1>
     <ul class="sg-header-0001__view-area-width-changer-ul">
       <li class="sg-header-0001__view-area-width-changer-li js-sg-header-0001__view-area-width-changer-li">320</li>
